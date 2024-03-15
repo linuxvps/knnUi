@@ -17,10 +17,6 @@ export class CardComponent implements OnInit {
   }
 
   fetchData() {
-    this.httpClient.get('http://localhost:8080/login/getAllUser').subscribe(response => {
-      console.log(response)
-      this.response = response;
-    })
   }
 
 }

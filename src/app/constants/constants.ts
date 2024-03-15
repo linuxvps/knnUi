@@ -1,5 +1,5 @@
 export const Constants = {
 
-  CARD_API_URL: "/cards"
+  GET_ALL_CARDS_API_URL: "/getAllCards"
 
 }
