@@ -1,5 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
+import {CardService} from "../../service/card.service";
 
 @Component({
   selector: 'app-card',
@@ -9,14 +10,22 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   styleUrl: './card.component.css'
 })
 export class CardComponent implements OnInit {
-  httpClient = inject(HttpClient);
+
   response: any = [];
 
+
+  constructor(private cardService:CardService) {
+  }
   ngOnInit(): void {
     this.fetchData();
+    console.log('card component')
   }
 
   fetchData() {
+    this.cardService.getAllCards().subscribe(value => {
+      this.response = value.body;
+      console.log(this.response)
+    })
   }
 
 }

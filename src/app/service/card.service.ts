@@ -12,6 +12,5 @@ export class CardService {
 
   getAllCards(){
     return this.http.get(environment.rootUrl + Constants.GET_ALL_CARDS_API_URL,{observe:'response'});
-
   }
 }
