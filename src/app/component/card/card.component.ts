@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
-import {CardService} from "../../service/cardservice/card.service";
+import {CardService} from "../../service/card/card.service";
 
 @Component({
   selector: 'app-card',
