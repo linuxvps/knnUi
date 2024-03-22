@@ -1,7 +1,7 @@
-
 <div class="h-screen md:flex">
-<!--  left panel -->
-  <div class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden">
+  <!--  left panel -->
+  <div
+    class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden">
     <div>
       <h1 class="text-white font-bold text-4xl font-sans">GoFinance</h1>
       <p class="text-white mt-1">The most popular peer to peer lending at SEA</p>
@@ -15,9 +15,13 @@
     <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
   </div>
 
-<!-- right panel -->
+  <!-- right panel -->
   <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
-    <form class="bg-white">
+    <!-- *   form      -->
+    <!--{{nimaForm.value | json }}
+    <br/>
+    {{securityUser | json}}
+-->    <form class="bg-white"     (ngSubmit)="onSubmit()" )   #nimaForm="ngForm">
       <h1 class="text-gray-800 font-bold text-2xl mb-1">Hello Again!</h1>
       <p class="text-sm font-normal text-gray-600 mb-7">Welcome Back</p>
       <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -26,7 +30,7 @@
           <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                 clip-rule="evenodd"/>
         </svg>
-        <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Full name"/>
+        <input [(ngModel)]="securityUser.fullName" class="pl-2 outline-none border-none" type="text" name="fullName" id="" placeholder="Full name"/>
       </div>
 
       <!--user name-->
@@ -39,7 +43,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
         </svg>
-        <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Email Address"/>
+        <input [(ngModel)]="securityUser.email" class="pl-2 outline-none border-none" type="text" name="email" id="" placeholder="Email Address"/>
       </div>
 
       <!--   pass   -->
@@ -50,7 +54,7 @@
                 d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
                 clip-rule="evenodd"/>
         </svg>
-        <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Password"/>
+        <input [(ngModel)]="securityUser.pwd" class="pl-2 outline-none border-none" type="text" name="pwd" id="" placeholder="Password"/>
       </div>
 
       <!--   submit   -->
