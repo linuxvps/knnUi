@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {JsonPipe} from "@angular/common";
 import {SecUser} from "../../model/SecUser.model";
+import {SignupService} from "../../service/signup/signup.service";
 
 @Component({
   selector: 'app-signup',
@@ -15,15 +16,15 @@ import {SecUser} from "../../model/SecUser.model";
 })
 export class SignupComponent {
 
-  securityUser = new SecUser(0,'','','','');
+  securityUser = new SecUser(0, '', '', '', '');
 
 
-  constructor() {
+  constructor(private signupService: SignupService) {
 
   }
 
-  onSubmit(){
-
+  onSubmit() {
+    this.signupService.signUpUser(this.securityUser);
   }
 
 
