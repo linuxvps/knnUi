@@ -24,7 +24,10 @@ export class SignupComponent {
   }
 
   onSubmit() {
+    debugger
+    console.log(this.securityUser)
     this.signupService.signUpUser(this.securityUser);
+    console.log('after')
   }
 
 

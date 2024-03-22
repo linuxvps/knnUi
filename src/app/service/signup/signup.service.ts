@@ -13,6 +13,7 @@ export class SignupService {
   }
 
   signUpUser(secUser: SecUser) {
+    console.log(  'calling api : ' + environment.rootUrl + Constants.SIGN_UP_USER_API_URL)
     return this.http.post(environment.rootUrl + Constants.SIGN_UP_USER_API_URL, secUser, {observe: 'response'});
   }
 }
