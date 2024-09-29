@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {environment} from "../../../environments/environment.development";
+import {Constants} from "../../constants/constants";
 
 export interface CashPrediction {
   actualCash: number;
@@ -11,11 +13,13 @@ export interface CashPrediction {
   providedIn: 'root'
 })
 export class PredictionService {
-  private apiUrl = 'http://localhost:6666/api/predictions'; // Adjust if necessary
+
 
   constructor(private http: HttpClient) {}
 
-  getPredictions(): Observable<{ predictions: CashPrediction[], plotImage: string }> {
-    return this.http.get<{ predictions: CashPrediction[], plotImage: string }>(this.apiUrl);
+  getPredictions() {
+    return this.http.get(
+      environment.rootUrl + Constants.PREDICTIONS_API_URL, {observe: 'response'}
+    )
   }
 }
