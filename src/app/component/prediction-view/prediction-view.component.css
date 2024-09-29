@@ -1,0 +1,104 @@
+body {
+  background-color: #f7f7f7; /* added light blue background color to the entire page */
+}
+/* Container that holds everything */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7; /* added light gray background color */
+}
+
+/* Title styles */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Predictions list styles */
+.predictions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Prediction card (styled like a card) */
+.prediction-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid #ddd; /* added light gray border */
+}
+
+/* Hover effect for the card */
+.prediction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card content styling */
+.card-content {
+  font-size: 1.2rem;
+  color: #444;
+  padding: 10px; /* added padding to card content */
+}
+
+.label {
+  font-weight: bold;
+  color: #555;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* added faint text shadow */
+}
+
+.value {
+  color: #333;
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* Image container */
+.image-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Image styling */
+.prediction-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect for image */
+.prediction-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .prediction-card {
+    max-width: 100%;
+  }
+
+  .card-content {
+    font-size: 1rem;
+  }
+}

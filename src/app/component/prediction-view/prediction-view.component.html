@@ -1,11 +1,24 @@
-<div>
-  <ul>
-    <li *ngFor="let prediction of predictions">
-      Actual Cash: {{ prediction.actualCash }}, Predicted Cash: {{ prediction.predictedCash }}
+<body class="blue-background">
+<div class="container">
+  <h1 class="title">Cash Predictions</h1>
+
+  <ul class="predictions-list">
+    <li class="prediction-card" *ngFor="let prediction of predictions">
+      <div class="card-content">
+        <span class="label">Actual Cash:</span>
+        <span class="value">{{ prediction.actualCash }}</span>
+        <br>
+        <span class="label">Predicted Cash:</span>
+        <span class="value">{{ prediction.predictedCash }}</span>
+      </div>
     </li>
   </ul>
 
-  <div *ngIf="plotImage">
-    <img [src]="plotImage" alt="Cash Prediction Plot" />
+  <div class="image-container" *ngIf="plotImage">
+    <img class="prediction-image" [src]="plotImage" alt="Cash Prediction Plot"/>
   </div>
 </div>
+
+
+<!-- your page content here -->
+</body>
