@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {CashPrediction, PredictionService} from '../../service/prediction/prediction.service';
 import {catchError} from 'rxjs';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-prediction-view',
   templateUrl: './prediction-view.component.html',
   standalone: true,
+  imports: [CommonModule],
   styleUrls: ['./prediction-view.component.css']
 })
 export class PredictionViewComponent implements OnInit {
@@ -29,11 +31,8 @@ export class PredictionViewComponent implements OnInit {
   }
 
   private handleResponse(response: any): void {
-    console.log('response  predictionService')
-    console.log(response);
-    debugger
-    this.predictions = response.predictions;
-    this.plotImage = response.plotImage;
+    this.predictions = response.body.predictions;
+    this.plotImage = response.body.plotImage;
   }
 
   private handleError(error: any): void {
