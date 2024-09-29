@@ -4,4 +4,8 @@
       Actual Cash: {{ prediction.actualCash }}, Predicted Cash: {{ prediction.predictedCash }}
     </li>
   </ul>
+
+  <div *ngIf="plotImage">
+    <img [src]="plotImage" alt="Cash Prediction Plot" />
+  </div>
 </div>

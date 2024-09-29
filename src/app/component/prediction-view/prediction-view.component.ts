@@ -32,7 +32,8 @@ export class PredictionViewComponent implements OnInit {
 
   private handleResponse(response: any): void {
     this.predictions = response.body.predictions;
-    this.plotImage = response.body.plotImage;
+    this.plotImage = 'data:image/png;base64,' + response.body.plotImage;
+
   }
 
   private handleError(error: any): void {
