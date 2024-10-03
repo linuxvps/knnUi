@@ -23,7 +23,7 @@ export class PredictionViewComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.predictionService.getPredictions().pipe(
+    this.predictionService.getPredictions(3).pipe(
       catchError(error => {
         this.handleError(error);
         throw error;
@@ -97,7 +97,15 @@ export class PredictionViewComponent implements OnInit, AfterViewInit {
     }
   }
   onSubmit() {
-    // Perform an action with the input value here
     console.log(this.inputValue);
+    this.predictionService.getPredictions(<number>this.inputValue).pipe(
+      catchError(error => {
+        this.handleError(error);
+        throw error;
+      })
+    ).subscribe((response: any) => {
+      this.handleResponse(response);
+      this.setupChart();
+    });
   }
 }

@@ -16,15 +16,12 @@ export class PredictionService {
 
   constructor(private http: HttpClient) {}
 
-  getPredictions()
+  getPredictions(id: number)
   {
-    console.log(environment.rootUrl + Constants.PREDICTIONS_API_URL)
-    console.log(this.http.get(
-      environment.rootUrl + Constants.PREDICTIONS_API_URL, {observe: 'response'}
-    ))
+    const url = `${environment.rootUrl}${Constants.PREDICTIONS_API_URL}/${id}`;
+    console.log(url);
+    return this.http.get(url, {observe: 'response'});
 
-    return this.http.get(
-      environment.rootUrl + Constants.PREDICTIONS_API_URL, {observe: 'response'}
-    )
+
   }
 }
