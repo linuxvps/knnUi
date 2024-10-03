@@ -1,7 +1,5 @@
-<body class="blue-background">
 <div class="container">
   <h1 class="title">Cash Predictions</h1>
-
   <ul class="predictions-list">
     <li class="prediction-card" *ngFor="let prediction of predictions">
       <div class="card-content">
@@ -14,11 +12,8 @@
     </li>
   </ul>
 
-  <div class="image-container" *ngIf="plotImage">
-    <img class="prediction-image" [src]="plotImage" alt="Cash Prediction Plot"/>
+  <!-- Chart.js chart display -->
+  <div style="display: block;">
+    <canvas id="cashPredictionChart"></canvas>
   </div>
 </div>
-
-
-<!-- your page content here -->
-</body>
