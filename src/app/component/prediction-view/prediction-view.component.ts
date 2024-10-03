@@ -3,17 +3,19 @@ import { CashPrediction, PredictionService } from '../../service/prediction/pred
 import { catchError } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Chart, registerables } from 'chart.js';
+import { FormsModule } from '@angular/forms'; // Add this import
 
 @Component({
   selector: 'app-prediction-view',
   templateUrl: './prediction-view.component.html',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule], // Add FormsModule to imports
   styleUrls: ['./prediction-view.component.css']
 })
 export class PredictionViewComponent implements OnInit, AfterViewInit {
   predictions: CashPrediction[] = [];
   chart!: Chart;
+  inputValue: number | undefined ;
 
   constructor(private predictionService: PredictionService) {
     // Registering chart.js components globally
@@ -93,5 +95,9 @@ export class PredictionViewComponent implements OnInit, AfterViewInit {
       this.chart.data.datasets[1].data = predictedCash;
       this.chart.update();
     }
+  }
+  onSubmit() {
+    // Perform an action with the input value here
+    console.log(this.inputValue);
   }
 }

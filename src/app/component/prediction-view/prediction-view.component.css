@@ -110,3 +110,40 @@ body {
     font-size: 1rem;
   }
 }
+.centered-input {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.centered-input input[type="number"] {
+  width: 240px;
+  height: 30px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.centered-input input[type="number"]::placeholder {
+  color: #666;
+  font-size: 14px;
+}
+
+.submit-button {
+  background-color: #4CAF50; /* green */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* add some margin to the left */
+}
+
+.submit-button:hover {
+  background-color: #3e8e41; /* darker green */
+}
+
+.submit-button:active {
+  background-color: #3e8e41; /* darker green */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
