@@ -1,4 +1,4 @@
 export const environment = {
-    isProduction : true,
-    rootUrl : 'http://localhost:8888'
+  isProduction : true,
+  rootUrl : 'http://77.221.158.94:8081/'
 };
