@@ -4,5 +4,5 @@ services:
     build:
       dockerfile: Dockerfile
     ports:
-      - "80:4200"
+      - "800:4200"
     command: ng serve --host 0.0.0.0
